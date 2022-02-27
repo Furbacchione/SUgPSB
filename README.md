@@ -9,8 +9,6 @@ This repository content the script used for the testing of variations of general
 
 The code has been developed to be run on HPC cluser computing of Ghent University. One of the main limitation is that only compiled MatLab code can be executed. For the use of CUTEst, it means that the selection of the problems has to be done at the moment of the compilation.
 
-## How to run
-
 
 ## Reference
 
@@ -21,5 +19,7 @@ The code has been developed to be run on HPC cluser computing of Ghent Universit
 - Boutet, N., Haelterman, R., & Degroote, J. (2021). Quasi-Newton Optimization Methods: Combining Multi-Secant with Symmetry. Conference: SIAM Conference on Optimization (OP21).
 - Boutet, N. (2021). Analytical study of multi-secant quasi-Newton methods for optimization problems: approaching the multi-secant property in symmetric quasi-Newton update formulas (Doctoral dissertation, Ghent University).
 
+
+# How to run
 
 # Content of the code
