@@ -23,3 +23,25 @@ The code has been developed to be run on HPC cluser computing of Ghent Universit
 # How to run
 
 # Content of the code
+
+## a_Test_Script
+
+This is the main subscript of the code. It defines the applicable parameters, call the subfunction and save the results.
+
+The parameters are the following. 
+- General running parameters
+  - value_deviation: for 0, use the standard starting point. To test sensibility to starting point, we add $\Delta=k \times (1,-1,1,-1,\dots,1,-1)$ to the standard starting point. We devined the standard value [0,1,-10,100]. This value can be given as parameter when running the script, otherwise the script will only use the first value of value_deviation. 
+  - type_prob: 1= local problems, 2 Library in MatLab, 3 CUTEst.
+  - probs: select one given problem when type_prod=1 or 2.
+- convergence criteria
+  - tol: tolerance of the solution.
+  - MaxIte: maximum number of iterations.
+- Initialisation of the first step
+  - omega_start: value of omega to define the second point
+- line search
+  - linesearch: 1 if you want to apply line search. Otherwise 0.
+  - mu: parameter of the line search.
+  - eta: parameter of the line search.
+- Saving
+  - fname: name of the file where the data will be saved.
+
