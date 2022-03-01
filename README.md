@@ -2,6 +2,7 @@
 
 This repository content the script used for the testing of variations of generalized PSB. The different update formulas can be tested with local developed function, with a MatLab library of optimization problems or the CUTEst library. 
 
+This is a very short explanation of the code. Feel free to send feedback for part of the explanation that should be more clear or if you find errors or bugs.
 
 # Generalities
 
@@ -42,6 +43,31 @@ The parameters are the following.
   - linesearch: 1 if you want to apply line search. Otherwise 0.
   - mu: parameter of the line search.
   - eta: parameter of the line search.
+  - Other tolerances of line search are defined in e_line_search
 - Saving
   - fname: name of the file where the data will be saved.
 
+Note that the update formula of the algorithms and the choice of the algorithm parameters are done in Auxillary Functions, see below.
+
+The function calls g_Optimization_loop and i_Algo_choice.
+
+## Auxillary_functions
+
+### g_Optimization_loop
+Main loop of the screen. It calls: 
+- d_Update_Hessian: to compute the new value of the Hessian.
+- b_First_step: to compute the second point and the first direction
+- c2_adapted_QR: script for adapted QR filtering (for SGOMS in particular). c_new_QR could be also used excepted for SGOMS.
+- l_direction_calculation: calculate the direction.
+- e_line_search: Apply line search if selected.
+
+### d_Update_Hessian
+Here you can define update formulas. The formula must compute the value of BH(:,:,end+1). Parameter direct=1, means BH is in fact B, the estimate of the Hessian. If direct=0, BH is H, the estimate of the inverse of the Hessian. Each method should have a distinct name. 
+
+Parameter[1] is the number of secant equation that are conserved in the calculation.
+
+## i_Algo_choice
+Here you define the algorithms that you want to test. Some examples are provided.
+
+## uncprobs
+This is a MatLab library of optimization problem based on the list established by Moré (see Ref in Articles above).
