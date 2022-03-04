@@ -82,6 +82,7 @@ Main loop of the screen. It calls:
 - c2_adapted_QR: script for adapted QR filtering (for SGOMS in particular). c_new_QR could be also used excepted for SGOMS.
 - l_direction_calculation: calculate the direction.
 - e_line_search: Apply line search if selected.
+- ...
 
 ### d_Update_Hessian
 Here you can define update formulas. The formula must compute the value of BH(:,:,end+1). Parameter direct=1, means BH is in fact B, the estimate of the Hessian. If direct=0, BH is H, the estimate of the inverse of the Hessian. Each method should have a distinct name. 
