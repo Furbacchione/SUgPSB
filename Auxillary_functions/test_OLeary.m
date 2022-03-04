@@ -1,0 +1,6 @@
+
+load('MySave.mat'); 
+
+[x,f,g,stp,info,nfev] ...
+       = k_cvsrch(fcn,n,x,f,g,s,stp,ftol,gtol,xtol, ...
+                 stpmin,stpmax,maxfev)
