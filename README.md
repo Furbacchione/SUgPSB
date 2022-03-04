@@ -31,7 +31,10 @@ My_All_in_one_script contains everything needed: MyCompilationBatch for the comp
 
 I describe below the most important pieces of the code. I probably forgot some of the files. For this reason, I publish also a part of my archives. It means that probably some of the published files are obsolete. 
 
-## a_Test_Script
+
+## Root of the repository
+
+###a_Test_Script
 
 This is the main subscript of the code. It defines the applicable parameters, call the subfunction and save the results.
 
@@ -57,6 +60,19 @@ Note that the update formula of the algorithms and the choice of the algorithm p
 
 The function calls g_Optimization_loop and i_Algo_choice.
 
+### u_load_all_matrices
+This script loads and concatenates the results of the calculations from a given folder. Parameter "Limit" makes it possible to filter out the problems with dimension <=limit.
+
+### Dolan_Graphs
+Creates the Dolan graphes given in the published articles. 
+
+- MaxIte: max iteration shown on the graph
+- n: only used to easily load fill parameter "keep".
+- limit: maximum tolerance of function value compared to the best solution to consider another algorithm to have converged to the right solution. Generally 1%.
+- keep: Algorithms that are kept in the comparison.  
+- kept: The script makes a graph for each kind of algorithms (based on the name of the algorithm (from d_Update_Hessian). After that, it creates a last graph with a selection of algorithms. You use "kept" to select which algorithm you want to show in this last graph.
+- algo_letters: associate a letter at each algorithm in order to make a easier legend. 
+
 ## Auxillary_functions
 
 ### g_Optimization_loop
@@ -72,7 +88,7 @@ Here you can define update formulas. The formula must compute the value of BH(:,
 
 Parameter[1] is the number of secant equation that are conserved in the calculation. Other parameters can be used freely in the update formula definition.
 
-## i_Algo_choice
+### i_Algo_choice
 Here you define the algorithms that you want to test. Some examples are provided.
 
 ## simple_example
