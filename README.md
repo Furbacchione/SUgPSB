@@ -99,9 +99,13 @@ Here you can define a simple function and its gradient to test the script locall
 
 ### more_function
 Script to call function from map uncprobs (see below).
+- Moré, J. J., Garbow, B. S., & Hillstrom, K. E. (1981). Testing unconstrained optimization software. ACM Transactions on Mathematical Software (TOMS), 7(1), 17-41.
 
 ### cutest_function
-Script to call function from CUTest.
+Script to call function from CUTest. 
+- Gould, N. I., Orban, D., & Toint, P. L. (2015). CUTEst: a constrained and unconstrained testing environment with safe threads for mathematical optimization. Computational optimization and applications, 60(3), 545-557.
 
 ## uncprobs
-This is a MatLab library of optimization problem based on the list established by Moré (see Ref in Articles above).
+This is a MatLab library of optimization problem based on the list established by Moré. 
+- https://www.mathworks.com/matlabcentral/fileexchange/10532-hybrid-symbolic-and-numerical-simulation-studies-of-time-fractional-order (To be verified)
+
