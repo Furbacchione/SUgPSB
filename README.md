@@ -23,7 +23,13 @@ The code has been developed to be run on HPC cluser computing of Ghent Universit
 
 # How to run
 
+Script to run the compiled code with CUTest based on the rules of ghent University HPC server are given in map "Scripts". 
+
+My_All_in_one_script contains everything needed: MyCompilationBatch for the compilation with CUTest and MyBadJobscript to run multiple instances of the script for different starting points. Note that you have to compile a distinct file for each CUTest problems.
+
 # Content of the code
+
+I describe below the most important pieces of the code. I probably forgot some of the files. For this reason, I publish also a part of my archives. It means that probably some of the published files are obsolete. 
 
 ## a_Test_Script
 
@@ -64,10 +70,22 @@ Main loop of the screen. It calls:
 ### d_Update_Hessian
 Here you can define update formulas. The formula must compute the value of BH(:,:,end+1). Parameter direct=1, means BH is in fact B, the estimate of the Hessian. If direct=0, BH is H, the estimate of the inverse of the Hessian. Each method should have a distinct name. 
 
-Parameter[1] is the number of secant equation that are conserved in the calculation.
+Parameter[1] is the number of secant equation that are conserved in the calculation. Other parameters can be used freely in the update formula definition.
 
 ## i_Algo_choice
 Here you define the algorithms that you want to test. Some examples are provided.
+
+## simple_example
+Script to call the right functions
+
+### simple_function
+Here you can define a simple function and its gradient to test the script locally. For type_prob=1
+
+### more_function
+Script to call function from map uncprobs (see below).
+
+### cutest_function
+Script to call function from CUTest.
 
 ## uncprobs
 This is a MatLab library of optimization problem based on the list established by Moré (see Ref in Articles above).
